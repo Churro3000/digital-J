@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Private Journal</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #e6ccff; /* pastel purple */
+      color: black;
+    }
+    .sidebar {
+      width: 30%;
+      background-color: #d1b3ff; /* slightly darker pastel */
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .sidebar h2 {
+      margin-top: 0;
+    }
+    .button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      background-color: #c299ff;
+      color: black;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      font-size: 16px;
+    }
+    .content {
+      width: 70%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .section {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Categories</h2>
+    <button class="button" onclick="showSection('games')">Games</button>
+    <button class="button" onclick="showSection('books')">Books</button>
+    <button class="button" onclick="showSection('todo')">To-Do List</button>
+  </div>
+
+  <div class="content">
+    <div id="games" class="section">
+      <h2>Favorite Games</h2>
+      <p>Stardew Valley, Minecraft, The Witcher 3, Celeste</p>
+    </div>
+    <div id="books" class="section">
+      <h2>Favorite Books</h2>
+      <p>The Alchemist, Atomic Habits, Harry Potter, Sapiens</p>
+    </div>
+    <div id="todo" class="section">
+      <h2>To-Do List</h2>
+      <ul>
+        <li>Finish math notes</li>
+        <li>Buy groceries</li>
+        <li>Practice guitar</li>
+        <li>Read for 30 minutes</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
